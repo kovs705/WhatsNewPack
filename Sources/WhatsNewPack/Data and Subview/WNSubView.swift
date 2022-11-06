@@ -12,9 +12,12 @@ public struct WNSubView: View {
     
     public var feature: Feature.New
     
-    public init(feature: Feature.New) {
+    public init(feature: Feature.New, color: Color) {
         self.feature = feature
+        self.color = color
     }
+    
+    public var color: Color
     
     public var body: some View {
         
@@ -23,7 +26,7 @@ public struct WNSubView: View {
             // icon:
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
-                    .fill(.blue)
+                    .fill(color)                        // custom color
                     .frame(width: 50, height: 50)
                 Image(systemName: feature.icon)
                     .foregroundColor(.white)
@@ -58,7 +61,7 @@ public struct WNSubView: View {
 @available(iOS 14.0, *)
 struct WNSubView_Previews: PreviewProvider {
     static var previews: some View {
-        WNSubView(feature: featuresData[0].new[0])
+        WNSubView(feature: featuresData[0].new[0], color: .green)
             .previewLayout(.fixed(width: 322, height: 75))
     }
 }
