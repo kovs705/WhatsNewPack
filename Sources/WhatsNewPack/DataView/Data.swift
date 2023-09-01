@@ -22,26 +22,22 @@ public struct Feature: Codable, Hashable {
     }
 }
 
-// MARK: - Load features from JSON file:
-public var featuresData: [Feature] = load(fileName: "features.json")
-
     // MARK: - JSON loader
 @available(iOS 14.0, *)
 public class UserData: ObservableObject {
-    @Published public var features = featuresData
+    @Published public var features: [Feature] = []
     
     public init() {}
 }
 
-public func load<T: Decodable>(fileName: String) -> T {
+public func load<T: Decodable>(fileName: String, bundle: Bundle = Bundle.main) -> T {
     let data: Data
     
-    // getting data from main bundle:
-    guard let file = Bundle.main.url(forResource: fileName, withExtension: nil)
-        else {
-            fatalError("Can't find \(fileName) in main bundle.")
-        }
-    
+    // getting data from the specified bundle
+    guard let file = bundle.url(forResource: fileName, withExtension: nil) else {
+        fatalError("Can't find \(fileName) in bundle.")
+    }
+
     // Attaching data from file to the "data" property
     do {
         data = try Data(contentsOf: file)

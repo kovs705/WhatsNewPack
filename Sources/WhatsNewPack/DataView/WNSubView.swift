@@ -61,7 +61,6 @@ public struct WNSubView: View {
 @available(iOS 14.0, *)
 struct WNSubView_Previews: PreviewProvider {
     static var previews: some View {
-        WNSubView(feature: featuresData[0].new[0], color: .green)
-            .previewLayout(.fixed(width: 322, height: 75))
+        WNSubView(feature: UserData().features[0].new[0], color: .green)
     }
 }
