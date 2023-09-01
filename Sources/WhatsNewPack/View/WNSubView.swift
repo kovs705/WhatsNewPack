@@ -10,9 +10,13 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct WNSubView: View {
     
-    @State var feature: Feature.New
+    public var feature: Feature.New
+    public var color: Color
     
-    @State var color: Color
+    public init(feature: Feature.New, color: Color) {
+        self.feature = feature
+        self.color = color
+    }
     
     public var body: some View {
         
@@ -42,7 +46,7 @@ public struct WNSubView: View {
                     .lineLimit(2)
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: 80)
+        .frame(maxWidth: .infinity, maxHeight: 90)
     }
 }
 

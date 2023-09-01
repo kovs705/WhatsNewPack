@@ -11,16 +11,34 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct WhatsNew: View {
     
-    @State var featureObject: Feature
+    public var featureObject: Feature
+    public var title: String = "What's new?"
+    public var color: Color  = .purple
+    
+    public var buttonTitle: String = "Continue"
+    public var buttonColor: Color  = .blue
+    public var buttonCornerRadius: CGFloat = 20
+    
+    public var action: (() -> Void)
+    
+    public init(featureObject: Feature, title: String, color: Color, buttonTitle: String, buttonColor: Color, buttonCornerRadius: CGFloat, action: @escaping () -> Void) {
+        self.featureObject = featureObject
+        self.title = title
+        self.color = color
+        self.buttonTitle = buttonTitle
+        self.buttonColor = buttonColor
+        self.buttonCornerRadius = buttonCornerRadius
+        self.action = action
+    }
+    
     
     public var body: some View {
-//        NavigationView {
+        ScrollView {
             VStack(spacing: 70) {
-                Spacer()
                 Spacer()
                 
                 VStack {
-                    Text("What's new?")
+                    Text(title)
                         .font(.largeTitle)
                         .bold()
                     Text("Version \(featureObject.version)")
@@ -31,22 +49,20 @@ public struct WhatsNew: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     ForEach(featureObject.new, id: \.self) { newFeature in
-                        WNSubView(feature: newFeature, color: .green)
-                            .frame(width: UIScreen.main.bounds.width-20)
+                        WNSubView(feature: newFeature, color: color)
+                            .padding(.horizontal, 20)
                     }
                 }
-                .frame(width: UIScreen.main.bounds.width)
-                // .padding(.horizontal)
                 
                 
                 Button(action: {
-                    // print("That worked, you sunnawabeach")
-                    // self.presentationMode.wrappedValue.dismiss()
+                    action()
                 }, label: {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .frame(width: 350, height: 50)
-                        Text("Continue")
+                        RoundedRectangle(cornerRadius: buttonCornerRadius, style: .continuous)
+                            .frame(height: 50)
+                            .padding(.horizontal, 65)
+                        Text(buttonTitle)
                             .font(.body)
                             .bold()
                             .foregroundColor(.white)
@@ -55,27 +71,24 @@ public struct WhatsNew: View {
                 
                 Spacer()
                 Spacer()
-                    .padding(.vertical)
                 // end of VStack
             }
-//
-//        }
-//
-//        // .navigationBarHidden(true)
-//        .navigationBarBackButtonHidden(true)
-//        #if os(iOS)
-//        .navigationViewStyle(.stack)
-//        #endif
-//        //end of NavView
+        }
     }
 }
-//
-//@available(iOS 14.0, *)
-//struct WhatsNew_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let userData = UserData()
-//        return WhatsNew(featureObject: userData.features[0])
-//            .previewDevice("iPhone 14 Pro")
-//            .environmentObject(UserData())
-//    }
-//}
+
+@available(iOS 14.0, *)
+struct WhatsNew_Previews: PreviewProvider {
+    
+    static func printIt() {
+        print()
+    }
+    
+    static var previews: some View {
+        WhatsNew(featureObject: Feature(version: "1.0", new: [Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
+                                Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
+                                                              Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help")]), title: "What's new?", color: .purple, buttonTitle: "Continue", buttonColor: .blue, buttonCornerRadius: 20) {
+            printIt()
+        }
+    }
+}
