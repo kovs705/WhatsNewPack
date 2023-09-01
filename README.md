@@ -10,10 +10,10 @@ Just copy json, fetch the data and show to the user in desired colors, icons and
 
 ## Instruction
 To use this package all you need to do is:
-    1. Create a .json file with your desired name
-    2. Add a sceleton copy from below
-    3. Copy the example screen
-    4. Done!
+ 1. Create a .json file with your desired name
+ 2. Add a sceleton copy from below
+ 3. Copy the example screen
+ 4. Done!
 
 
 
@@ -28,7 +28,7 @@ To use this package all you need to do is:
                 "title": "Apple Pencil 2",
                 "subtitle": "Supported"
             },
-            
+     
             {
                 "body": "Click Continue",
                 "icon": "eraser.fill",
