@@ -11,7 +11,7 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct WhatsNew: View {
     
-    public var featureObject: Feature
+    @State var featureObject: Feature
     
     public var body: some View {
 //        NavigationView {

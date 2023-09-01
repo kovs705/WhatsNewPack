@@ -10,7 +10,7 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct WNSubView: View {
     
-    public var feature: Feature.New
+    @State var feature: Feature.New
     
     @State var color: Color
     
