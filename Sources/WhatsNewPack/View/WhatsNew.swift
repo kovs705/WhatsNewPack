@@ -10,12 +10,8 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 public struct WhatsNew: View {
-    // @EnvironmentObject var userData: UserData
-    public var featureObject: Feature
     
-    public init(featureObject: Feature) {
-        self.featureObject = featureObject
-    }
+    public var featureObject: Feature
     
     public var body: some View {
 //        NavigationView {

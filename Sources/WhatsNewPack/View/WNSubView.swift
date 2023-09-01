@@ -12,55 +12,46 @@ public struct WNSubView: View {
     
     public var feature: Feature.New
     
-    public init(feature: Feature.New, color: Color) {
-        self.feature = feature
-        self.color = color
-    }
-    
-    public var color: Color
+    @State var color: Color
     
     public var body: some View {
         
-        HStack(spacing: 20) {
-            Spacer()
-            // icon:
+        HStack(spacing: 15) {
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
-                    .fill(color)                        // custom color
+                    .fill(color)
                     .frame(width: 50, height: 50)
                 Image(systemName: feature.icon)
                     .foregroundColor(.white)
                     .font(.title)
             }
-            .navigationViewStyle(.stack)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text(feature.title)
                     .font(.body)
                     .bold()
+                    .lineLimit(1)
                 Text(feature.subtitle)
                     .bold()
                     .font(.subheadline)
                     .foregroundColor(.gray)
+                    .lineLimit(1)
                 Text(feature.body)
                     .font(.caption2)
                     .foregroundColor(.gray)
                     .lineLimit(2)
             }
-            .frame(minWidth: 220, alignment: .leading)
-            
-            
-            Spacer()
-            Spacer()
         }
-        .frame(height: 70)
-        // end of HStack
+        .frame(maxWidth: .infinity, maxHeight: 80)
     }
 }
 
 @available(iOS 14.0, *)
 struct WNSubView_Previews: PreviewProvider {
+    
+    static let featureExample = Feature(version: "1.0", new: [Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help")])
+    
     static var previews: some View {
-        WNSubView(feature: UserData().features[0].new[0], color: .green)
+        WNSubView(feature: featureExample.new.first!, color: .green)
     }
 }
