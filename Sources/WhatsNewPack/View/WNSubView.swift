@@ -50,6 +50,7 @@ public struct WNSubView: View {
                     .multilineTextAlignment(.leading)
             }
             .padding(.trailing, 20)
+            .frame(maxWidth: .infinity)
         }
         .frame(maxWidth: .infinity, maxHeight: 90)
     }
