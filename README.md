@@ -4,6 +4,9 @@
 This package is made to show new app features right inside the sheet your your own desired screen in Apple-way!
 Just copy json, fetch the data and show to the user in desired colors, icons and titles!
 
+<img src="https://user-images.githubusercontent.com/56929597/265215838-a97fc943-de01-4c19-a724-956d98ca576b.png" 
+     width="365" height="715">
+
 ## Requirements
  - iOS 14.0 +
 
