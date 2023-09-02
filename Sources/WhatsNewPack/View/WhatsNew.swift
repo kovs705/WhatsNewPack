@@ -51,7 +51,6 @@ public struct WhatsNew: View {
                     VStack(alignment: .leading, spacing: 10) {
                         ForEach(featureObject.new, id: \.self) { newFeature in
                             WNSubView(feature: newFeature, color: color)
-                                .frame(width: geo.size.width - 40)
                         }
                     }
                     .frame(width: geo.size.width - 40)
