@@ -33,7 +33,6 @@ public struct WhatsNew: View {
     
     
     public var body: some View {
-        GeometryReader { geo in
             ScrollView {
                 VStack(spacing: 70) {
                     Spacer()
@@ -53,7 +52,6 @@ public struct WhatsNew: View {
                             WNSubView(feature: newFeature, color: color)
                         }
                     }
-                    .frame(width: geo.size.width - 40)
                     
                     
                     Button(action: {
@@ -75,7 +73,6 @@ public struct WhatsNew: View {
                     // end of VStack
                 }
             } // ScrollView
-        }
     }
 }
 

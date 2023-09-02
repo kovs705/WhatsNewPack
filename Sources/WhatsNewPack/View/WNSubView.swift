@@ -29,6 +29,7 @@ public struct WNSubView: View {
                     .foregroundColor(.white)
                     .font(.title)
             }
+            .padding(.leading, 20)
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(feature.title)
@@ -48,6 +49,7 @@ public struct WNSubView: View {
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
             }
+            .padding(.trailing, 20)
         }
         .frame(maxWidth: .infinity, maxHeight: 90)
     }
