@@ -77,7 +77,7 @@ struct ContentView: View {
             Text("Show what's new!")
         }
         .sheet(isPresented: $isShowing) {
-            WhatsNew(featureObject: features.first, title: "What's new?", color: .purple, buttonTitle: "Continue", buttonColor: .blue, buttonCornerRadius: 20) {
+            WhatsNew(featureObject: features.first!, title: "What's new?", color: .purple, buttonTitle: "Continue", buttonColor: .blue, buttonCornerRadius: 20) {
                 printFeature()
             }
         }

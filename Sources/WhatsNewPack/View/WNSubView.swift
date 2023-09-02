@@ -35,15 +35,18 @@ public struct WNSubView: View {
                     .font(.body)
                     .bold()
                     .lineLimit(1)
+                    .multilineTextAlignment(.leading)
                 Text(feature.subtitle)
                     .bold()
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .lineLimit(1)
+                    .multilineTextAlignment(.leading)
                 Text(feature.body)
                     .font(.caption2)
                     .foregroundColor(.gray)
                     .lineLimit(2)
+                    .multilineTextAlignment(.leading)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: 90)

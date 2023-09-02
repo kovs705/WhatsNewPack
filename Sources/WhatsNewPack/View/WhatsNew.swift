@@ -33,46 +33,48 @@ public struct WhatsNew: View {
     
     
     public var body: some View {
-        ScrollView {
-            VStack(spacing: 70) {
-                Spacer()
-                
-                VStack {
-                    Text(title)
-                        .font(.largeTitle)
-                        .bold()
-                    Text("Version \(featureObject.version)")
-                        .font(.title)
-                        .foregroundColor(.gray)
-                }
-                
-                
-                VStack(alignment: .leading, spacing: 10) {
-                    ForEach(featureObject.new, id: \.self) { newFeature in
-                        WNSubView(feature: newFeature, color: color)
-                            .padding(.horizontal, 20)
-                    }
-                }
-                
-                
-                Button(action: {
-                    action()
-                }, label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: buttonCornerRadius, style: .continuous)
-                            .frame(height: 50)
-                            .padding(.horizontal, 65)
-                        Text(buttonTitle)
-                            .font(.body)
+        GeometryReader { geo in
+            ScrollView {
+                VStack(spacing: 70) {
+                    Spacer()
+                    
+                    VStack {
+                        Text(title)
+                            .font(.largeTitle)
                             .bold()
-                            .foregroundColor(.white)
+                        Text("Version \(featureObject.version)")
+                            .font(.title)
+                            .foregroundColor(.gray)
                     }
-                })
-                
-                Spacer()
-                Spacer()
-                // end of VStack
-            }
+                    
+                    
+                    VStack(alignment: .leading, spacing: 10) {
+                        ForEach(featureObject.new, id: \.self) { newFeature in
+                            WNSubView(feature: newFeature, color: color)
+                        }
+                    }
+                    .frame(width: geo.size.width - 40)
+                    
+                    
+                    Button(action: {
+                        action()
+                    }, label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: buttonCornerRadius, style: .continuous)
+                                .frame(height: 50)
+                                .padding(.horizontal, 65)
+                            Text(buttonTitle)
+                                .font(.body)
+                                .bold()
+                                .foregroundColor(.white)
+                        }
+                    })
+                    
+                    Spacer()
+                    Spacer()
+                    // end of VStack
+                }
+            } // ScrollView
         }
     }
 }
@@ -87,7 +89,9 @@ struct WhatsNew_Previews: PreviewProvider {
     static var previews: some View {
         WhatsNew(featureObject: Feature(version: "1.0", new: [Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
                                 Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
-                                                              Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help")]), title: "What's new?", color: .purple, buttonTitle: "Continue", buttonColor: .blue, buttonCornerRadius: 20) {
+                                Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
+                                Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
+                                Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help")]), title: "What's new?", color: .purple, buttonTitle: "Continue", buttonColor: .blue, buttonCornerRadius: 20) {
             printIt()
         }
     }
