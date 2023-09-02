@@ -54,6 +54,7 @@ public struct WhatsNew: View {
                         }
                     }
                     .frame(width: geo.size.width - 40)
+                    .padding(.horizontal, 0)
                     
                     
                     Button(action: {
