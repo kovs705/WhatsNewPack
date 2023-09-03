@@ -50,6 +50,7 @@ public struct WhatsNew: View {
                     VStack(alignment: .leading, spacing: 10) {
                         ForEach(featureObject.new, id: \.self) { newFeature in
                             WNSubView(feature: newFeature, color: color)
+                                .padding(.trailing, 20)
                         }
                     }
                     
@@ -68,8 +69,8 @@ public struct WhatsNew: View {
                         }
                     })
                     
-                    Spacer()
-                    Spacer()
+//                    Spacer()
+//                    Spacer()
                     // end of VStack
                 }
             } // ScrollView
@@ -85,10 +86,10 @@ struct WhatsNew_Previews: PreviewProvider {
     
     static var previews: some View {
         WhatsNew(featureObject: Feature(version: "1.0", new: [Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
+                    Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
+                        Feature.New(body: "This is a body to test", icon: "chevron.left", title: "This is it", subtitle: "Subtitle is what can help"),
                                 Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
-                                Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
-                                Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help"),
-                                Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help")]), title: "What's new?", color: .purple, buttonTitle: "Continue", buttonColor: .blue, buttonCornerRadius: 20) {
+                                            Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help")]), title: "What's new?", color: .purple, buttonTitle: "Continue", buttonColor: .blue, buttonCornerRadius: 20) {
             printIt()
         }
     }
