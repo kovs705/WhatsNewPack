@@ -6,6 +6,8 @@ Just copy json, fetch the data and show to the user in desired colors, icons and
 
 <img src="https://user-images.githubusercontent.com/56929597/265215838-a97fc943-de01-4c19-a724-956d98ca576b.png" 
      width="365" height="715">
+     <img src="https://user-images.githubusercontent.com/56929597/265252639-2f363ed4-657a-4212-9ca6-77feb8623888.png" 
+     width="330" height="630">
 
 ## Requirements
  - iOS 14.0 +
