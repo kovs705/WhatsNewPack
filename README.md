@@ -23,6 +23,7 @@ To use this package all you need to do is:
 
 
 ## Sceleton copy for JSON
+```
 [
     {
         "version": "1.2",
@@ -64,9 +65,11 @@ To use this package all you need to do is:
         ]
     }
 ]
+```
 
 ## Example screen
 
+```
 import SwiftUI
 import WhatsNewPack
 
@@ -98,4 +101,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
+```
