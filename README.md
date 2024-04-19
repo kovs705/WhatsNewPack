@@ -23,7 +23,7 @@ To use this package all you need to do is:
 
 
 ## Sceleton copy for JSON
-```
+```json
 [
     {
         "version": "1.2",
@@ -69,7 +69,7 @@ To use this package all you need to do is:
 
 ## Example screen
 
-```
+```swift
 import SwiftUI
 import WhatsNewPack
 
