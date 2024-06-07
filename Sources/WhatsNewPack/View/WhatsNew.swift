@@ -19,6 +19,8 @@ public struct WhatsNew: View {
     public var buttonColor: Color  = .blue
     public var buttonCornerRadius: CGFloat = 20
     
+    @State private var isHidden = true
+    
     public var action: (() -> Void)
     
     public init(featureObject: Feature, title: String, color: Color, buttonTitle: String, buttonColor: Color, buttonCornerRadius: CGFloat, action: @escaping () -> Void) {
@@ -33,6 +35,7 @@ public struct WhatsNew: View {
     
     
     public var body: some View {
+        if !isHidden {
             ScrollView {
                 VStack(spacing: 70) {
                     Spacer()
@@ -69,11 +72,13 @@ public struct WhatsNew: View {
                         }
                     })
                     
-//                    Spacer()
-//                    Spacer()
-                    // end of VStack
                 }
             } // ScrollView
+            .transition(.move(edge: .bottom))
+            .onAppear {
+                isHidden = false
+            }
+        }
     }
 }
 
