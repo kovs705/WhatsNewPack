@@ -1,8 +1,9 @@
 //
 //  WNSubView.swift
-//  Whats New
+//  WhatsNewPack
 //
 //  Created by Kovs on 02.09.2022.
+//  https://github.com/kovs705
 //
 
 import SwiftUI
@@ -37,14 +38,9 @@ public struct WNSubView: View {
                     .bold()
                     .lineLimit(1)
                     .multilineTextAlignment(.leading)
-                Text(feature.subtitle)
+                Text(feature.body)
                     .bold()
                     .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .lineLimit(1)
-                    .multilineTextAlignment(.leading)
-                Text(feature.body)
-                    .font(.caption2)
                     .foregroundColor(.gray)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
@@ -57,7 +53,7 @@ public struct WNSubView: View {
 @available(iOS 14.0, *)
 struct WNSubView_Previews: PreviewProvider {
     
-    static let featureExample = Feature(version: "1.0", new: [Feature.New(body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left", title: "Don't worget about the title", subtitle: "Subtitle is what can help")])
+    static let featureExample = Feature(version: "1.0", new: [Feature.New(title: "Don't worget about the title", body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left")])
     
     static var previews: some View {
         WNSubView(feature: featureExample.new.first!, color: .green)
