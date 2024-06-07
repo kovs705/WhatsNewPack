@@ -1,8 +1,9 @@
 //
-//  Model.swift
-//
+//  Feature.swift
+//  WhatsNewPack
 //
 //  Created by Eugene Kovs on 01.09.2023.
+//  https://github.com/kovs705
 //
 
 import Foundation

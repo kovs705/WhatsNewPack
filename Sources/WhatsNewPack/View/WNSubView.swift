@@ -1,8 +1,9 @@
 //
 //  WNSubView.swift
-//  Whats New
+//  WhatsNewPack
 //
 //  Created by Kovs on 02.09.2022.
+//  https://github.com/kovs705
 //
 
 import SwiftUI

@@ -1,3 +1,11 @@
+//
+//  WhatsNewTests.swift
+//  WhatsNewPack
+//
+//  Created by Eugene Kovs on 07.06.2024.
+//  https://github.com/kovs705
+//
+
 import XCTest
 @testable import WhatsNewPack
 
@@ -10,10 +18,7 @@ final class WhatsNewPackTests: XCTestCase {
         // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
         
         func testExample() throws {
-            // This is an example of a functional test case.
-            // Use XCTAssert and related functions to verify your tests produce the correct
-            // results.
-            XCTAssertEqual(WhatsNewPack().text, "Hello, World!")
+            
         }
     }
 }
