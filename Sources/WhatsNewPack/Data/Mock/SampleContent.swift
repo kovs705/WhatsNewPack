@@ -6,10 +6,11 @@
 //  https://github.com/kovs705
 //
 
-import Foundation
+import SwiftUI
 
 enum SampleContent {
     // Random sample data for preview
+    // MARK: - Versions
     static let versions = [
         "1.0.0",
         "1.0.1",
@@ -21,6 +22,7 @@ enum SampleContent {
         "3.0.0",
     ]
     
+    // MARK: - Titles
     static let title = [
         "New User Interface",
         "Dark Mode",
@@ -44,6 +46,7 @@ enum SampleContent {
         "Progress Tracking"
     ]
     
+    // MARK: - SF icons
     static let icon = [
         "star.fill",
         "moon.fill",
@@ -67,6 +70,7 @@ enum SampleContent {
         "chart.bar.fill"
     ]
     
+    // MARK: - Body texts
     static let bodyText = [
         "We've completely redesigned the user interface to make it more intuitive and user-friendly.",
         "Enjoy a new dark mode that is easier on the eyes during night time.",
@@ -90,6 +94,7 @@ enum SampleContent {
         "Our new feature allows you to track your progress over time."
     ]
     
+    // MARK: - Features
     static let features: [Feature] = [
         Feature(
             version: "1.0.0",
@@ -135,6 +140,50 @@ enum SampleContent {
                     icon: "shield.fill"
                 )
             ]
+        )
+    ]
+    
+    // MARK: - Themes
+    static let themes: [Theme] = [
+        Theme(
+            backgroundColor: Color(uiColor: .systemBackground),
+            iconColor: .white,
+            iconBackgroundColor: .blue,
+            titleFont: .headline,
+            bodyFont: .subheadline,
+            textColor: Color(uiColor: .label)
+        ),
+        Theme(
+            backgroundColor: .black,
+            iconColor: .yellow,
+            iconBackgroundColor: .gray,
+            titleFont: .largeTitle,
+            bodyFont: .body,
+            textColor: .white
+        ),
+        Theme(
+            backgroundColor: .white,
+            iconColor: .black,
+            iconBackgroundColor: .red,
+            titleFont: .title,
+            bodyFont: .footnote,
+            textColor: .black
+        ),
+        Theme(
+            backgroundColor: .gray,
+            iconColor: .blue,
+            iconBackgroundColor: .green,
+            titleFont: .title2,
+            bodyFont: .caption,
+            textColor: .yellow
+        ),
+        Theme(
+            backgroundColor: Color(uiColor: .systemTeal),
+            iconColor: .purple,
+            iconBackgroundColor: .orange,
+            titleFont: .title3,
+            bodyFont: .callout,
+            textColor: .pink
         )
     ]
 }
