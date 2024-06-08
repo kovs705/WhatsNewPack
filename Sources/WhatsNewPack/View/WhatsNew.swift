@@ -19,6 +19,7 @@ public struct SwiftUIView: View {
     // MARK: - Body
     public var body: some View {
         innerContent
+            .background(theme.backgroundColor)
     }
     
     @ViewBuilder var innerContent: some View {
@@ -89,13 +90,13 @@ public struct SwiftUIView: View {
     }
     
     @ViewBuilder var acceptButtonContent: some View {
-        Text("Cool!")
-            .foregroundStyle(theme.iconColor)
+        Text(theme.buttonText)
+            .foregroundStyle(theme.buttonTextColor)
             .frame(maxWidth: .infinity)
             .padding(.vertical)
             .background(
                 RoundedRectangle(cornerRadius: 15)
-                    .fill(theme.iconBackgroundColor)
+                    .fill(theme.buttonBackgroundColor)
             )
     }
     

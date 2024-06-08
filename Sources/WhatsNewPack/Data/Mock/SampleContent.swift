@@ -151,31 +151,47 @@ enum SampleContent {
             iconBackgroundColor: .blue,
             titleFont: .headline,
             bodyFont: .subheadline,
-            textColor: Color(uiColor: .label)
+            textColor: Color(uiColor: .label),
+            
+            buttonBackgroundColor: .black,
+            buttonTextColor: .white,
+            buttonText: "Continue to app"
         ),
         Theme(
-            backgroundColor: .black,
+            backgroundColor: Color(uiColor: .systemGray5),
             iconColor: .yellow,
             iconBackgroundColor: .gray,
             titleFont: .largeTitle,
             bodyFont: .body,
-            textColor: .white
+            textColor: .white,
+            
+            buttonBackgroundColor: .blue,
+            buttonTextColor: .white,
+            buttonText: "That's nice!"
         ),
         Theme(
-            backgroundColor: .white,
+            backgroundColor: Color(uiColor: .systemBackground),
             iconColor: .black,
             iconBackgroundColor: .red,
             titleFont: .title,
             bodyFont: .footnote,
-            textColor: .black
+            textColor: .black,
+            
+            buttonBackgroundColor: .yellow,
+            buttonTextColor: .black,
+            buttonText: "Okay!"
         ),
         Theme(
-            backgroundColor: .gray,
+            backgroundColor: Color(uiColor: .brown),
             iconColor: .blue,
             iconBackgroundColor: .green,
             titleFont: .title2,
             bodyFont: .caption,
-            textColor: .yellow
+            textColor: .yellow,
+            
+            buttonBackgroundColor: .blue,
+            buttonTextColor: .black,
+            buttonText: "Wow!"
         ),
         Theme(
             backgroundColor: Color(uiColor: .systemTeal),
@@ -183,7 +199,11 @@ enum SampleContent {
             iconBackgroundColor: .orange,
             titleFont: .title3,
             bodyFont: .callout,
-            textColor: .pink
+            textColor: .pink,
+            
+            buttonBackgroundColor: .pink,
+            buttonTextColor: .purple,
+            buttonText: "Pinky"
         )
     ]
 }
