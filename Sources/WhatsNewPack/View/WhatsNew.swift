@@ -8,8 +8,9 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
-    var body: some View {
+@available(iOS 14.0, *)
+public struct SwiftUIView: View {
+    public var body: some View {
         Text("Hey, WhatsNew?!")
     }
 }
