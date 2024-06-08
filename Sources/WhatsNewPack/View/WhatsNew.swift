@@ -13,6 +13,9 @@ public struct SwiftUIView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    var feature: Feature
+    var theme: Theme
+    
     // MARK: - Body
     public var body: some View {
         innerContent
@@ -20,56 +23,89 @@ public struct SwiftUIView: View {
     
     @ViewBuilder var innerContent: some View {
         VStack {
-            Spacer()
             
-            title
-            versionSubTitle
+            titleAndVersion
             
             listOfFeatures
             
             acceptButton
             
-            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.vertical)
     }
     
-    // MARK: - Components
+    // MARK: - Title and Version
+    @ViewBuilder var titleAndVersion: some View {
+        VStack(spacing: 10) {
+            title
+            versionSubTitle
+        }
+        .padding(.top)
+    }
+    
     @ViewBuilder var title: some View {
         Text("Hey, WhatsNew?!")
+            .font(.largeTitle)
+            .bold()
     }
     
     @ViewBuilder var versionSubTitle: some View {
-        Text("Version 1.0.0")
+        Text("Version \(feature.version)")
     }
     
+    // MARK: - Features
     @ViewBuilder var listOfFeatures: some View {
+        Spacer()
+        
         VStack {
-            Text("Feature 1")
-            Text("Feature 2")
-            Text("Feature 3")
+            ForEach(feature.new, id: \.self) { feature in
+                WNSubView(feature: feature,
+                          color: theme.iconBackgroundColor)
+            }
         }
         .background(
             featuresCardBackground
         )
+        .padding()
+        
+        Spacer()
+        Spacer()
     }
     
     @ViewBuilder var featuresCardBackground: some View {
         RoundedRectangle(cornerRadius: 10)
-            .fill(Color.gray)
+            .fill(Color(uiColor: .systemGray5))
     }
     
+    // MARK: - Accept button
     @ViewBuilder var acceptButton: some View {
-        Button {
+        AnimatedButton(action: {
             dismiss()
-        } label: {
-            Text("Cool!")
+        }, cornerRadius: 15) {
+            acceptButtonContent
         }
+        .padding(.horizontal)
+    }
+    
+    @ViewBuilder var acceptButtonContent: some View {
+        Text("Cool!")
+            .foregroundStyle(theme.iconColor)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical)
+            .background(
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(theme.iconBackgroundColor)
+            )
     }
     
     
 }
 
+// MARK: - Preview
+#if DEBUG
 #Preview {
-    SwiftUIView()
+    SwiftUIView(feature: Feature.createRandomInstance(),
+                theme: Theme.createRandomInstance())
 }
+#endif
