@@ -12,6 +12,10 @@ import Foundation
 
 public extension Theme {
     
+    static func createRandomInstance() -> Theme {
+        SampleContent.themes.randomElement()!
+    }
+    
 }
 
 #endif
