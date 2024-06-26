@@ -202,7 +202,7 @@ enum SampleContent {
             textColor: .pink,
             
             buttonBackgroundColor: .pink,
-            buttonTextColor: .purple,
+            buttonTextColor: .white,
             buttonText: "Pinky"
         )
     ]
