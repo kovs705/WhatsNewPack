@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-@available(iOS 14.0, *)
+@available(iOS 15.0, *)
 public struct WNSubView: View {
     
     public var feature: Feature.New
@@ -50,7 +50,7 @@ public struct WNSubView: View {
     }
 }
 
-@available(iOS 14.0, *)
+@available(iOS 15.0, *)
 struct WNSubView_Previews: PreviewProvider {
     
     static let featureExample = Feature(version: "1.0", new: [Feature.New(title: "Don't worget about the title", body: "This is a body to test how does it look like! There's also the second line if something will go wrong", icon: "chevron.left")])

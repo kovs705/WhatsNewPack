@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-@available(iOS 14.0, *)
-public struct SwiftUIView: View {
+@available(iOS 15.0, *)
+public struct WhatsNewView: View {
     
     @Environment(\.dismiss) var dismiss
     
@@ -106,7 +106,7 @@ public struct SwiftUIView: View {
 // MARK: - Preview
 #if DEBUG
 #Preview {
-    SwiftUIView(feature: Feature.createRandomInstance(),
+    WhatsNewView(feature: Feature.createRandomInstance(),
                 theme: Theme.createRandomInstance())
 }
 #endif
