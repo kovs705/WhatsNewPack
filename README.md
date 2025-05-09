@@ -4,7 +4,7 @@
   <p>
     Library for presenting new features of the iOS app
     <br>
-    <i>Compatible with iOS 15.0 and later</i>
+    <i>Compatible with iOS 14.0 and later</i>
   </p>
 </div>
 
@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/badge/Swift-5.9-orange.svg" alt="Swift Version">
   </a>
   <a href="https://www.apple.com/ios/">
-    <img src="https://img.shields.io/badge/iOS-15%2B-blue.svg" alt="iOS">
+    <img src="https://img.shields.io/badge/iOS-14%2B-blue.svg" alt="iOS">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
